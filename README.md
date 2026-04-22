@@ -52,7 +52,7 @@ python train.py
 
 That's it. The script will:
 1. Download CIFAR-10 automatically to `./data/`
-2. Train the self-pruning network for **3 lambda values** (1e-5, 5e-5, 2e-4), 40 epochs each
+2. Train the self-pruning network for **3 lambda values** (1e-4, 5e-4, 2e-3), 40 epochs each
 3. Print a results table to the console
 4. Save `results_table.csv` and `gate_distribution.png`
 
@@ -70,15 +70,15 @@ Console output will look like:
 Device: cuda
 
 =======================================================
-  Training with λ = 1e-05
+  Training with λ = 1e-04
 =======================================================
-  Epoch  10/40 | Loss: 1.8234 | Train Acc: 42.11% | Test Acc: 43.50% | Sparsity: 8.32%
-  Epoch  20/40 | Loss: 1.6102 | Train Acc: 48.72% | Test Acc: 49.01% | Sparsity: 14.67%
-  Epoch  30/40 | Loss: 1.5341 | Train Acc: 52.10% | Test Acc: 51.88% | Sparsity: 18.42%
-  Epoch  40/40 | Loss: 1.4923 | Train Acc: 54.33% | Test Acc: 53.21% | Sparsity: 21.05%
+  Epoch  10/40 | Loss: 1.8234 | Train Acc: 42.11% | Test Acc: 43.50% | Sparsity: 99.92%
+  Epoch  20/40 | Loss: 1.6102 | Train Acc: 48.72% | Test Acc: 49.01% | Sparsity: 99.94%
+  Epoch  30/40 | Loss: 1.5341 | Train Acc: 52.10% | Test Acc: 51.88% | Sparsity: 99.97%
+  Epoch  40/40 | Loss: 1.4923 | Train Acc: 54.33% | Test Acc: 53.21% | Sparsity: 99.97%
 
   ► Final Test Accuracy : 53.21%
-  ► Final Sparsity      : 21.05%
+  ► Final Sparsity      : 99.97%
 ...
 ```
 
@@ -90,9 +90,9 @@ Final results table (also saved to `results_table.csv`):
 =======================================================
   Lambda       Test Acc (%)     Sparsity (%)
   -----------------------------------------
-  1e-05        ~52–55           ~15–25
-  5e-05        ~48–52           ~40–60
-  2e-04        ~43–48           ~65–80
+  1e-04        ~52–55           ~90-99
+  5e-04        ~48–52           ~99.95
+  2e-03        ~43–48           ~100
 =======================================================
 ```
 
